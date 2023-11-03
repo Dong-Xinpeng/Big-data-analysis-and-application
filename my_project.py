@@ -10,6 +10,8 @@ def build_index(data_vectors):
     # print(len(data_vectors))
     forest = MinHashLSHForest(num_perm=128)
     for vec_index in range(len(data_vectors)):
+        if(vec_index%100==0):
+            print(vec_index)
         m = MinHash(num_perm=128)
         for d in data_vectors[vec_index]:
             m.update(str(d).encode('utf8'))
@@ -34,6 +36,6 @@ if __name__ == '__main__':
 
     forest = build_index(raw_data)
     print("building index finished,ready to query")
-    
+
     res = find_k_similar(query,forest)
     print(res)
