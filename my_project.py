@@ -59,4 +59,4 @@ if __name__ == '__main__':
     execution_time = end_time - start_time
 
     print(res)  # 目前返回的是key，如何显示原文
-    print("query time cost:{}".format(execution_time))
+    print("query time cost:{}".format(execution_time))  #query time cost:4.371273799974006
