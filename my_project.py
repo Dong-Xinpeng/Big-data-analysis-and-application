@@ -11,6 +11,7 @@ def build_index(data_vectors):
     all_len  = len(data_vectors)
     forest = MinHashLSHForest(num_perm=128)
     for vec_index in range(len(data_vectors)):
+        # indexing pocess
         if(vec_index%10000==0):
             print("index_building:{}/{}".format(vec_index,all_len))
         m = MinHash(num_perm=128)
@@ -56,5 +57,5 @@ if __name__ == '__main__':
 
     execution_time = end_time - start_time
 
-    print(res)
+    print(res)  # 目前返回的是key，如何显示原文
     print("query time cost:{}".format(execution_time))
