@@ -48,7 +48,7 @@ if __name__ == '__main__':
         forest = build_index(raw_data)
         print("building index finished,ready to query")
     else:
-        file = open("./data/labels_500.pkl","rb")
+        file = open("./bad_lsh_index.pkl","rb")
         forest  = pickle.load(file)
         print("use old forest, ready to query")
 
