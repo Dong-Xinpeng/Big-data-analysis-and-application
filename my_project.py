@@ -19,6 +19,7 @@ def build_index(data_vectors):
             m.update(str(d).encode('utf8'))
         forest.add(vec_index, m)     
     forest.index()
+    # 保存至pkl
     with open('bad_lsh_index.pkl', 'wb') as file:
         pickle.dump(forest, file)
     return forest
